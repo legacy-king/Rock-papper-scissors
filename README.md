@@ -1,4 +1,3 @@
-# Rock-papper-scissors
 # Rock Paper Scissors ✊✋✌️
 
 A classic Rock-Paper-Scissors game built with JavaScript, HTML, and CSS. Users can play against the computer by clicking buttons, and the game announces the winner once either side reaches 5 points.
