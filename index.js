@@ -37,6 +37,7 @@ function updateResults(message) {
         : "😢 The computer won the game!";
     resultsDiv.innerHTML += `<h2>${winner}</h2>`;
     disableButtons();
+     showRestartButton();
   }
 }
 
@@ -58,4 +59,23 @@ function disableButtons() {
 document.getElementById("rock").addEventListener("click", () => handlePlayerChoice("rock"));
 document.getElementById("paper").addEventListener("click", () => handlePlayerChoice("paper"));
 document.getElementById("scissors").addEventListener("click", () => handlePlayerChoice("scissors"));
+
+// Reset game function
+const restartBtn = document.getElementById("restart");
+
+function showRestartButton() {
+  restartBtn.style.display = "inline-block";
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  resultsDiv.innerHTML = "Game restarted. Choose Rock, Paper, or Scissors to begin.";
+  document.getElementById("rock").disabled = false;
+  document.getElementById("paper").disabled = false;
+  document.getElementById("scissors").disabled = false;
+  restartBtn.style.display = "none";
+}
+
+restartBtn.addEventListener("click", resetGame);
 
